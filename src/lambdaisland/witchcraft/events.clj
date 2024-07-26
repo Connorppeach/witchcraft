@@ -130,6 +130,8 @@
        (proxy [org.bukkit.plugin.PluginBase] []
          (getDescription []
            (org.bukkit.plugin.PluginDescriptionFile. (str "Listen for " (name event)) "1.0" (str k)))
+         (getPluginMeta []
+           (io.papermc.paper.plugin.configuration.PluginMeta. (str "Listen for " (name event)) "1.0" (str k)))         
            (getName []
            "witchcraft")
          (isEnabled []
