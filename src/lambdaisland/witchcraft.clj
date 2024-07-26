@@ -87,7 +87,7 @@
     (getDescription []
       (org.bukkit.plugin.PluginDescriptionFile. "Witchcraft" "0.0" ""))
     (getPluginMeta []
-      (io.papermc.paper.plugin.configuration.PluginMeta. "Witchcraft" "0.0" ""))
+      (org.bukkit.plugin.PluginDescriptionFile. "Witchcraft" "0.0" ""))
     (isEnabled []
       true)
     (getName []
