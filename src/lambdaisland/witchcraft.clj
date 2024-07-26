@@ -88,6 +88,8 @@
       (org.bukkit.plugin.PluginDescriptionFile. "Witchcraft" "0.0" ""))
     (isEnabled []
       true)
+    (getName []
+      "witchcraft")
     (getLogger []
       (java.util.logging.Logger/getLogger "witchcraft"))))
 
