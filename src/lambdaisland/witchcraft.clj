@@ -1380,6 +1380,8 @@
       (-> b
           (assoc :material m)))
     b))
+(def set-blocks!   ([blocks]
+                    (set-blocks blocks {:keep-history? false})))
 
 (defn set-blocks
   "Set blocks in bulk
@@ -1515,6 +1517,17 @@
    (.setAllowFlight player true)
    (.setFlying player true)
    (teleport player (update (loc player) :y inc))))
+
+(defn nofly!
+  "Set a player as allowing flight and flying.
+  Note: doesn't seem to actually cause flying, but it does make flying
+  possible."
+  ([]
+   (nofly! (player)))
+  ([^Player player]
+   (.setAllowFlight player false)
+   (.setFlying player false)))
+
 
 (defn clear-weather
   "Get clear weather"
