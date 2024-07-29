@@ -1429,7 +1429,7 @@
                                  :after blocks}))
      (-set-blocks server-type blocks))))
 
-(defn set-blocksNH
+(defn set-blocks!
   "set blocks, no history"
   [blocks]
   (set-blocks blocks {:keep-history? false}))
