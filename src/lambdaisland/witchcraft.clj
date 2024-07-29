@@ -1380,8 +1380,6 @@
       (-> b
           (assoc :material m)))
     b))
-(defn- set-blocks!   [blocks]
-                    (set-blocks blocks {:keep-history? false}))
 
 (defn set-blocks
   "Set blocks in bulk
@@ -1430,6 +1428,11 @@
        (swap! undo-history conj {:before (doall (map block blocks))
                                  :after blocks}))
      (-set-blocks server-type blocks))))
+
+(defn set-blocksNH
+  "set blocks, no history"
+  [blocks]
+  (set-blocks blocks {:keep-history? false}))
 
 (def
   ^{:doc "Alias for [[set-blocks]], for symmetry with [[lambdaisland.witchcraft.cursor/build!]]"}
