@@ -1380,7 +1380,7 @@
       (-> b
           (assoc :material m)))
     b))
-(defn set-blocks!   [blocks]
+(defn- set-blocks!   [blocks]
                     (set-blocks blocks {:keep-history? false}))
 
 (defn set-blocks
