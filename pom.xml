@@ -31,27 +31,7 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
-      <version>1.11.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.lambdaisland</groupId>
-      <artifactId>classpath</artifactId>
-      <version>0.0.27</version>
-    </dependency>
-    <dependency>
-      <groupId>lambdaisland</groupId>
-      <artifactId>data-printers</artifactId>
-      <version>0.7.47</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.cryptomorin</groupId>
-      <artifactId>XSeries</artifactId>
-      <version>8.8.0</version>
-    </dependency>
-    <dependency>
-      <groupId>clojure2d</groupId>
-      <artifactId>clojure2d</artifactId>
-      <version>1.4.4</version>
+      <version>1.12.0-rc1</version>
     </dependency>
     <dependency>
       <groupId>org.reflections</groupId>
@@ -59,45 +39,29 @@
       <version>0.9.12</version>
     </dependency>
     <dependency>
+      <groupId>com.lambdaisland</groupId>
+      <artifactId>classpath</artifactId>
+      <version>0.0.27</version>
+    </dependency>
+    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
     </dependency>
     <dependency>
-      <groupId>net.glowstone</groupId>
-      <artifactId>glowstone</artifactId>
-      <version>2021.7.0-SNAPSHOT</version>
-      <scope>provided</scope>
+      <groupId>clojure2d</groupId>
+      <artifactId>clojure2d</artifactId>
+      <version>1.4.4</version>
     </dependency>
     <dependency>
-      <groupId>nrepl</groupId>
-      <artifactId>nrepl</artifactId>
-      <version>0.9.0</version>
-      <scope>provided</scope>
+      <groupId>com.github.cryptomorin</groupId>
+      <artifactId>XSeries</artifactId>
+      <version>9.8.0</version>
     </dependency>
     <dependency>
-      <groupId>net.citizensnpcs</groupId>
-      <artifactId>citizensapi</artifactId>
-      <version>2.0.29-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>sk.tomsik68</groupId>
-      <artifactId>mclauncher-api</artifactId>
-      <version>0.3.6</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>progrock</groupId>
-      <artifactId>progrock</artifactId>
-      <version>0.1.2</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>net.kyori</groupId>
-      <artifactId>adventure-api</artifactId>
-      <version>4.11.0</version>
-      <scope>provided</scope>
+      <groupId>lambdaisland</groupId>
+      <artifactId>data-printers</artifactId>
+      <version>0.7.47</version>
     </dependency>
   </dependencies>
   <build>
@@ -158,35 +122,30 @@
     </repository>
     <repository>
       <id>glowstone-snapshots</id>
-      <name>glowstone-snapshots</name>
       <url>https://repo.glowstone.net/content/repositories/snapshots/</url>
     </repository>
     <repository>
       <id>aikar</id>
-      <name>aikar</name>
       <url>https://repo.aikar.co/nexus/content/repositories/aikar-release/</url>
     </repository>
     <repository>
       <id>papermc</id>
-      <name>papermc</name>
       <url>https://papermc.io/repo/repository/maven-public/</url>
     </repository>
     <repository>
       <id>sk_tomsik68</id>
-      <name>sk_tomsik68</name>
       <url>https://raw.githubusercontent.com/tomsik68/maven-repo/master/</url>
     </repository>
     <repository>
       <id>citizensnpcs</id>
-      <name>citizensnpcs</name>
       <url>https://repo.citizensnpcs.co/</url>
     </repository>
   </repositories>
   <distributionManagement>
     <repository>
-      <id>clojars</id>
-      <name>Clojars repository</name>
-      <url>https://clojars.org/repo</url>
+      <id>repsy</id>
+      <name>My Maven Repository on Repsy</name>
+      <url>https://repo.repsy.io/mvn/connorppeach/default</url>
     </repository>
   </distributionManagement>
 </project>

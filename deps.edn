@@ -39,7 +39,7 @@
   }
 
 
-
+ :mvn/local-repo "./.m2"
  :mvn/repos
  {"glowstone-snapshots" {:url "https://repo.glowstone.net/content/repositories/snapshots/"}
   ;;"glowstone-releases"  {:url "https://repo.glowstone.net/content/repositories/releases/"}

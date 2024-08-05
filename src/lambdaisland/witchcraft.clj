@@ -8,7 +8,8 @@
             [lambdaisland.witchcraft.safe-bean :refer [bean bean->]]
             [lambdaisland.witchcraft.util :as util]
             [lambdaisland.witchcraft.markup :as markup]
-            [lambdaisland.witchcraft.reflect :as reflect])
+            [lambdaisland.witchcraft.reflect :as reflect]
+            [lambdaisland.witchcraft.plugin :as pl])
   (:import (java.util UUID)
            (com.cryptomorin.xseries XMaterial XBlock)
            (org.bukkit Bukkit
@@ -509,8 +510,34 @@
   ([this that & more]
    (reduce -add (-add this that) more)))
 
+
+(def bukkitcommandmap (.getDeclaredField (.getClass (Bukkit/getServer)) "commandMap"))
+
+(.setAccessible bukkitcommandmap true)
+(def commandmap (.get bukkitcommandmap (Bukkit/getServer)))
+(def commandlist (atom {}))
+(defn on-command! ([prefix mcommand fun]
+  (swap! commandlist assoc mcommand fun)
+  (if (contains? @commandlist mcommand)
+      (.register commandmap prefix 
+               (let [name mcommand]
+                 (proxy [org.bukkit.command.Command] [name]
+                                   (execute [sender malias args] ((get @commandlist mcommand) sender malias args)))))
+    ) (.syncCommands (Bukkit/getServer)))
+  ([mcommand fun]
+   (on-command! (str (some->> (.getStackTrace (Thread/currentThread))               
+                         (map #(re-matches #"^([^$]+)\$.+" (.getClassName %))) 
+                         (keep last)
+                         (dedupe)
+                         (second)
+                         (symbol)
+                         (find-ns))) mcommand fun)))
+
+
 ;; The type hint here has the downside that for block locations we still get
 ;; floats, even though in that case they are ints.
+
+
 (defn x ^double [o]
   (cond
     (vector? o)
@@ -776,6 +803,7 @@
           :name (set-display-name my-meta v)
           :lore (set-lore my-meta v)))
       (set-item-meta o my-meta))))
+
 
 (defn get-target-block
   "Get the target block in the line of sight of the entity/player, as org.bukkit.block.Block"
