@@ -21,7 +21,7 @@
   {:extra-deps {io.papermc/paperclip {:mvn/version "3.0.2"}}}
 
   :paper-api
-  {:extra-deps {io.papermc.paper/paper-api {:mvn/version "1.20.4-R0.1-SNAPSHOT"}}}
+  {:extra-deps {io.papermc.paper/paper-api {:mvn/version "1.21.1-R0.1-SNAPSHOT"}}}
 
   :nrepl
   {:extra-deps {nrepl/nrepl {:mvn/version "LATEST"}}}
