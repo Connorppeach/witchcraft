@@ -29,7 +29,6 @@
            (org.bukkit.inventory.meta ItemMeta)
            (org.bukkit.material MaterialData Directional)
            (org.bukkit.plugin PluginManager Plugin)
-           (org.bukkit.potion Potion PotionEffectType)
            (org.bukkit.scheduler BukkitScheduler)
            (org.bukkit.util Vector)))
 
@@ -1956,8 +1955,6 @@
   ([^Player player bool]
    (.setAllowFlight player bool)))
 
-(defn active-potion-effects [^Player player]
-  (.getActivePotionEffects player))
 
 (defn active-item [^Player player]
   (.getActiveItem player))
